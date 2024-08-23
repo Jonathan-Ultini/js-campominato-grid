@@ -2,16 +2,33 @@
 const playButton = document.getElementById('play');
 const gridContainer = document.getElementById('grid');
 
-// Aggiungiamo un event listener al bottone play
+const difficultySelect = document.getElementById('difficulty');
+
 playButton.addEventListener('click', function () {
-  generateGrid();
+  const difficulty = difficultySelect.value;
+  generateGrid(difficulty);
 });
 
-// Funzione per generare la griglia
-function generateGrid() {
-  gridContainer.innerHTML = ''; // Puliamo il contenitore della griglia
+function generateGrid(difficulty) {
+  gridContainer.innerHTML = '';
 
-  for (let i = 1; i <= 100; i++) {
+  let gridSize;
+  let gridClass;
+
+  if (difficulty == 1) {
+    gridSize = 100;
+    gridClass = 'grid-10';
+  } else if (difficulty == 2) {
+    gridSize = 81;
+    gridClass = 'grid-9';
+  } else {
+    gridSize = 49;
+    gridClass = 'grid-7';
+  }
+
+  gridContainer.className = `grid ${gridClass}`;
+
+  for (let i = 1; i <= gridSize; i++) {
     const cell = document.createElement('div');
     cell.classList.add('grid-item');
     cell.innerHTML = i;

@@ -34,6 +34,15 @@ body {
   grid-template-columns: repeat(10, 1fr);
 }
 
+.grid-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.grid-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+
 .grid-item.clicked {
   background-color: #87CEEB;
 }
