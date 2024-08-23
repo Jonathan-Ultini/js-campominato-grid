@@ -33,3 +33,7 @@ body {
 .grid-10 {
   grid-template-columns: repeat(10, 1fr);
 }
+
+.grid-item.clicked {
+  background-color: #87CEEB;
+}
